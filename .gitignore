@@ -1,0 +1,58 @@
+# 二进制文件
+telegram-dice-bot
+bin/
+
+# 数据库文件
+*.db
+data/
+
+# 环境配置（包含敏感信息）
+.env
+
+# Go 构建缓存
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# 测试二进制文件
+*.test
+
+# 输出目录
+*.out
+
+# Go 工作空间文件
+go.work
+
+# IDE 文件
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 日志文件
+*.log
+
+# 临时文件
+*.tmp
+*.temp
+# 敏感信息保护
+.env.backup
+*.backup
+.env.local
+.env.production
+
+# 数据库文件
+*.db
+*.sqlite
+*.sqlite3
+data/*.db
+
+# 日志文件
+*.log
+logs/
+
+# 临时文件
+*.tmp
+*.temp
