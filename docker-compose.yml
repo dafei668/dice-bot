@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  dice-bot:
+    build: .
+    container_name: telegram-dice-bot
+    restart: unless-stopped
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - DATABASE_URL=/data/dice_bot.db
+      - PORT=8080
+      - COMMISSION_RATE=0.1
+      - MIN_BET=1
+      - MAX_BET=100
+    volumes:
+      - ./data:/data
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  data:
